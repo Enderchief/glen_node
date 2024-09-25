@@ -76,3 +76,9 @@ export function serve_node(port, handler) {
     return new Error(`${error}`)
   }
 }
+
+export function close_node(server) {
+  return new Promise((resolve) => {
+    server.close(() => resolve())
+  })
+}
