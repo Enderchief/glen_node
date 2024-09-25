@@ -5,4 +5,4 @@ import glen
 pub fn serve(
   port: Int,
   handler: fn(glen.Request) -> Promise(glen.Response),
-) -> Nil
+) -> Result(Nil, String)

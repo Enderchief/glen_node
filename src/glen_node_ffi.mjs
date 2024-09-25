@@ -1,4 +1,5 @@
 import { createServer } from "node:http";
+import { Ok, Error } from "./gleam.mjs";
 
 // @deno-types="../build/dev/javascript/glen/glen.d.mts"
 import * as glen from "../glen/glen.mjs";
@@ -69,5 +70,9 @@ export function serve_node(port, handler) {
     });
   });
 
-  server.listen(port);
+  try {
+    return new Ok(server.listen(port));
+  } catch (error) {
+    return new Error(`${error}`)
+  }
 }
