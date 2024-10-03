@@ -1,5 +1,5 @@
 name = "glen_node"
-version = "0.0.1"
+version = "0.0.2"
 
 description = "NodeJS adapter for the Glen web framework"
 licences = ["Apache-2.0"]
